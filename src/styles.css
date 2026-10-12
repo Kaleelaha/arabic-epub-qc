@@ -1,0 +1,509 @@
+:root {
+    --navy: #14213d;
+    --blue: #2f6fed;
+    --tint: #eef3fe;
+    --line: #dde3ee;
+    --mute: #5d6b86;
+    --red: #b42318;
+    --amber: #a15c07;
+    --green: #18794e
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--navy);
+    font: 16px/1.5 "Segoe UI", system-ui, sans-serif
+}
+
+.top {
+    padding: 32px 20px 8px;
+    max-width: 1000px;
+    margin: auto
+}
+
+.top h1 {
+    margin: 0;
+    font-size: 1.75rem
+}
+
+.top p {
+    margin: 4px 0 0;
+    color: var(--mute)
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 16px 20px 40px;
+    display: grid;
+    gap: 16px
+}
+
+.card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff
+}
+
+.card h2 {
+    margin: 0 0 12px;
+    font-size: 1rem
+}
+
+.uploads {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+}
+
+.drop {
+    border: 1.5px dashed #9db6ee;
+    border-radius: 8px;
+    padding: 28px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--mute);
+    text-align: center;
+    cursor: pointer
+}
+
+.drop:hover,
+.drop.over,
+.drop:focus-visible {
+    background: var(--tint);
+    border-color: var(--blue);
+    outline: none
+}
+
+.file {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.file div {
+    flex: 1;
+    min-width: 0
+}
+
+.file strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+small {
+    display: block;
+    color: var(--mute)
+}
+
+.opts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px
+}
+
+.opts label {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start
+}
+
+.opts input {
+    margin-top: 5px;
+    accent-color: var(--blue)
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px
+}
+
+button:disabled {
+    opacity: .45;
+    cursor: not-allowed
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px
+}
+
+.primary {
+    background: var(--blue);
+    color: #fff;
+    border: 0;
+    padding: 10px 20px;
+    font-weight: 600
+}
+
+.ghost {
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--navy);
+    padding: 6px 12px;
+    font-size: .875rem
+}
+
+.ghost:hover:not(:disabled) {
+    border-color: var(--blue);
+    background: var(--tint)
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.empty {
+    color: var(--mute);
+    text-align: center;
+    margin: 8px 0
+}
+
+.progress .bar {
+    height: 8px;
+    background: var(--tint);
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.progress i {
+    display: block;
+    height: 100%;
+    background: var(--blue);
+    transition: width .2s
+}
+
+.progress span {
+    color: var(--mute);
+    font-size: .875rem
+}
+
+.msg {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid
+}
+
+.err {
+    background: #fef3f2;
+    border-color: #f4b7b1;
+    color: var(--red)
+}
+
+.warn {
+    background: #fffaeb;
+    border-color: #f1d79b;
+    color: var(--amber)
+}
+
+.ok {
+    background: #ecfdf3;
+    border-color: #a6dfc0;
+    color: var(--green)
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px
+}
+
+.stat {
+    padding: 12px
+}
+
+.stat b {
+    display: block;
+    font-size: 1.6rem
+}
+
+.stat span {
+    font-size: .8rem;
+    color: var(--mute)
+}
+
+.filters {
+    display: grid;
+    gap: 10px
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px
+}
+
+.tabs button {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    color: var(--navy)
+}
+
+.tabs .on {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff
+}
+
+input[type=search] {
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font: inherit;
+    width: 100%
+}
+
+.list {
+    display: grid;
+    gap: 12px
+}
+
+.diff {
+    border: 1px solid var(--line);
+    border-inline-start: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 12px 14px
+}
+
+.diff.missing {
+    border-inline-start-color: var(--red)
+}
+
+.diff.extra {
+    border-inline-start-color: var(--amber)
+}
+
+.diff.spelling {
+    border-inline-start-color: #7a3fd1
+}
+
+.diff header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px
+}
+
+.chap {
+    flex: 1;
+    color: var(--mute);
+    font-size: .875rem
+}
+
+.chip {
+    background: var(--tint);
+    color: var(--blue);
+    font-size: .8rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 99px
+}
+
+.line {
+    margin: 4px 0;
+    font: 1.2rem/2 "Amiri", "Noto Naskh Arabic", "Traditional Arabic", "Geeza Pro", serif
+}
+
+.line b {
+    font: 600 .75rem system-ui;
+    color: var(--mute);
+    margin-inline-end: 6px
+}
+
+.line em {
+    color: var(--mute);
+    font: italic .85rem system-ui
+}
+
+mark {
+    background: #ffe08a;
+    color: inherit;
+    padding: 0 3px;
+    border-radius: 3px
+}
+
+.more {
+    justify-self: center
+}
+
+.toast {
+    position: fixed;
+    bottom: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px
+}
+
+.card-header h2 {
+    margin: 0
+}
+
+.ext-badge {
+    background: var(--tint);
+    color: var(--blue);
+    font-weight: 700;
+    font-size: .75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: .5px
+}
+
+.part-selector {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+    display: grid;
+    gap: 8px
+}
+
+.part-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .875rem
+}
+
+.part-hint {
+    color: var(--mute);
+    font-size: .8rem
+}
+
+.range-row {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.range-input {
+    flex: 1;
+    padding: 7px 10px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font: inherit;
+    font-size: .875rem
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: .8rem
+}
+
+.all-badge {
+    background: var(--tint);
+    color: var(--navy);
+    font-size: .8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500
+}
+
+.range-tip {
+    color: var(--mute);
+    font-size: .78rem;
+    margin: 0
+}
+
+.mode-bar {
+    display: flex;
+    gap: 8px;
+    background: var(--tint);
+    padding: 4px;
+    border-radius: 8px;
+    width: fit-content
+}
+
+.mode-btn {
+    background: transparent;
+    border: 0;
+    color: var(--navy);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: .9rem
+}
+
+.mode-btn.active {
+    background: #fff;
+    color: var(--blue);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .08)
+}
+
+.snippet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+}
+
+.snippet-area {
+    width: 100%;
+    height: 180px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px;
+    font: 1.15rem/1.8 "Amiri", "Noto Naskh Arabic", serif;
+    resize: vertical
+}
+
+.snippet-area:focus {
+    border-color: var(--blue);
+    outline: none
+}
+
+footer {
+    text-align: center;
+    color: var(--mute);
+    font-size: .85rem;
+    padding: 20px;
+    border-top: 1px solid var(--line)
+}
+
+@media(max-width:760px) {
+
+    .uploads,
+    .opts,
+    .snippet-grid {
+        grid-template-columns: 1fr
+    }
+
+    .summary {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        transition: none !important
+    }
+}
